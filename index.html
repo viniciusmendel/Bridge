@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESP32 Pool Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div id="statusBar">
+        <span id="powerStatus">Power: --</span>
+        <span id="commStatus">Comm: --</span>
+        <span id="lastUpdate">Last update: --</span>
+    </div>
+
+    <div id="menuButton">☰</div>
+    <nav id="sideMenu">
+        <a href="#" data-page="dashboard">Dashboard</a>
+        <a href="#" data-page="analytics">Analytics</a>
+        <a href="#" data-page="status">ESP32 Status</a>
+        <a href="#" data-page="test">Test Page</a>
+        <a href="login.html" id="loginLink">Login</a>
+        <a href="#" id="logoutBtn">Logout</a>
+    </nav>
+
+    <main>
+        <section id="dashboard" class="page">
+            <h1>Dashboard</h1>
+            <div class="readings">
+                <div>pH: <span id="phReading">--</span></div>
+                <div>Chlorine: <span id="chlorineReading">--</span></div>
+                <div>Temperature: <span id="tempReading">--</span> °C</div>
+            </div>
+            <div class="pump-controls">
+                <button data-mode="ON">ON</button>
+                <button data-mode="OFF">OFF</button>
+                <button data-mode="AUTO">AUTO</button>
+            </div>
+            <canvas id="liveChart"></canvas>
+        </section>
+
+        <section id="analytics" class="page hidden">
+            <h1>Analytics</h1>
+            <canvas id="analyticsChart"></canvas>
+        </section>
+
+        <section id="status" class="page hidden">
+            <h1>ESP32 Status</h1>
+            <p id="statusInfo">Awaiting data...</p>
+        </section>
+
+        <section id="test" class="page hidden">
+            <h1>Test Page</h1>
+            <button id="testButton">Test Connection</button>
+            <pre id="testOutput"></pre>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

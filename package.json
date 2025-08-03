@@ -1,0 +1,8 @@
+{
+  "name": "esp32-pool-dashboard",
+  "version": "1.0.0",
+  "description": "Mobile-friendly dashboard for ESP32 pool monitoring and control",
+  "scripts": {
+    "test": "echo 'No tests specified' && exit 0"
+  }
+}
